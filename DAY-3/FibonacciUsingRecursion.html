@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fibonacci Calculator</title>
+    <script>
+        // JavaScript function to calculate Fibonacci number using recursion
+        function fibonacci(n) {
+            if (n <= 1) {
+                return n;
+            }
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+
+        // Function to handle the button click and display the result
+        function calculateFibonacci() {
+            var num = parseInt(document.getElementById("number").value);
+            if (isNaN(num) || num < 0) {
+                alert("Please enter a valid non-negative integer.");
+                return;
+            }
+
+            var result = fibonacci(num);
+            document.getElementById("result").innerText = "Fibonacci(" + num + ") = " + result;
+        }
+    </script>
+</head>
+<body>
+    <h2>Fibonacci Calculator</h2>
+    <label for="number">Enter a number:</label>
+    <input type="text" id="number" name="number">
+    <button onclick="calculateFibonacci()">Calculate</button>
+
+    <h1 id="result">Fibonacci result will be displayed here</h1>
+</body>
+</html>
