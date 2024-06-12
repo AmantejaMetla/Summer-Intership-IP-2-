@@ -1,0 +1,61 @@
+<script>
+    function printMsg(name) { //function heading
+        console.log(`Hello ${name}`); // function body
+    }
+
+    printMsg('Ram')
+    printMsg('Shyam')
+
+//CW1: DAF add to print addition of 2 numbers
+//CW2: DAF sqr to print square of number
+//CW3: DAF printString(num, str) to print string num times
+//printString(5, 'Hello World'); should print hello world 5 times
+
+
+
+//CW4: DAF sum with 2 parameter to print addition of 4 numbers
+
+function sum(x, y) {
+    return x + y
+}
+
+s = sum(5, 6)
+console.log(s);
+console.log(sum(7, 8));
+console.log(sum(sum(1, 2), sum(3, 4)));
+// sum(3, sum(3, 4))
+// sum(3, 7)
+// 10
+
+//CW: DAF checkAge(members) to find eligible drinker from array of json records having key name and age
+//eligible age for drinking is 21
+members = [
+    {'name':'Vedant', 'age': 17},
+    {'name':'Aditi', 'age': 19},
+    {'name':'Amit', 'age': 25},
+    {'name':'Akshat', 'age': 20},
+    {'name':'Soham', 'age': 75}
+]
+
+function checkAge(arr) {
+
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i]['age'] >= 21)
+            console.log(`${arr[i]['name']} allowed to drink`)
+        else 
+            console.log(`${arr[i]['name']} not allowed to drink`)
+
+    }
+}
+
+checkAge(members)
+
+getTotalBreezer(36) => 43
+getTotalBreezer(6) => 7
+
+
+
+
+
+
+</script>

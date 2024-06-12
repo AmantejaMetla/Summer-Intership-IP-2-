@@ -1,0 +1,46 @@
+<body id="body"></body>
+
+<script>
+    color = 'red'
+    //setInterval(function, timeinmillisecond)
+    setInterval(function() {
+        if(color == 'red') {
+            color = 'green'
+            document.getElementById('body').style.backgroundColor = color
+        } else if(color == 'green') {
+            color = 'blue'
+            document.getElementById('body').style.backgroundColor = color
+        } else if(color == 'blue') {
+            color = 'red'
+            document.getElementById('body').style.backgroundColor = color
+        }
+    }, 1000) 
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <body id="body">
+    <button onclick="changeBgColor('red')">Red</button>
+    <button onclick="changeBgColor('green')">Green</button>
+    <button onclick="changeBgColor('blue')">Blue</button>
+</body>
+
+<script>
+function changeBgColor(colorcode) {
+    document.getElementById('body').style.backgroundColor = colorcode;
+}
+
+//WAP to change body background color onclick of following buttonss
+//Red Green Blue 
+</script> -->
