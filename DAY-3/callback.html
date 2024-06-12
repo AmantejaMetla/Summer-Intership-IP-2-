@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arithmetic Operations</title>
+    <script>
+        // JavaScript functions for basic arithmetic operations
+        function add(a, b) {
+            return a + b;
+        }
+
+        function subtract(a, b) {
+            return a - b;
+        }
+
+        function multiply(a, b) {
+            return a * b;
+        }
+
+        function divide(a, b) {
+            if (b === 0) {
+                alert("Division by zero is not allowed.");
+                return null;
+            }
+            return a / b;
+        }
+
+        // Function to perform the operation using a callback
+        function calculate(callback) {
+            var num1 = parseFloat(document.getElementById("number1").value);
+            var num2 = parseFloat(document.getElementById("number2").value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers.");
+                return;
+            }
+
+            var result = callback(num1, num2);
+            if (result !== null) {
+                document.getElementById("result").innerText = "Result: " + result;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Arithmetic Operations</h2>
+    <label for="number1">Enter first number:</label>
+    <input type="text" id="number1" name="number1">
+    <br>
+    <label for="number2">Enter second number:</label>
+    <input type="text" id="number2" name="number2">
+    <br><br>
+
+    <button onclick="calculate(add)">Add</button>
+    <button onclick="calculate(subtract)">Subtract</button>
+    <button onclick="calculate(multiply)">Multiply</button>
+    <button onclick="
