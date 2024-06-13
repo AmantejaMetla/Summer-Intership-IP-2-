@@ -1,0 +1,16 @@
+let salaries = [25000, 30000, 60000, 80000, 90000];
+let annualSalaries = salaries.map(salary => salary * 12);
+
+annualSalaries.forEach(salary => {
+    let tax;
+    if (salary > 1000000) {
+        tax = salary * 0.20;
+    } else if (salary > 500000) {
+        tax = salary * 0.15;
+    } else if (salary > 300000) {
+        tax = salary * 0.10;
+    } else {
+        tax = 0;
+    }
+    console.log(`Annual Salary: ${salary}, Tax: ${tax}`);
+});
