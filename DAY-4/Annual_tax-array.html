@@ -1,16 +1,49 @@
-let salaries = [25000, 30000, 60000, 80000, 90000];
-let annualSalaries = salaries.map(salary => salary * 12);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Tax Calculator</title>
+</head>
+<body>
+    <h1>Salary Tax Calculator</h1>
+    <button onclick="calculateTax()">Calculate Tax</button>
+    <div id="result"></div>
 
-annualSalaries.forEach(salary => {
-    let tax;
-    if (salary > 1000000) {
-        tax = salary * 0.20;
-    } else if (salary > 500000) {
-        tax = salary * 0.15;
-    } else if (salary > 300000) {
-        tax = salary * 0.10;
-    } else {
-        tax = 0;
-    }
-    console.log(`Annual Salary: ${salary}, Tax: ${tax}`);
-});
+    <script>
+        function calculateTax() {
+            let salaries = [25000, 30000, 60000, 80000, 90000];
+            let annualSalaries = salaries.map(salary => salary * 12);
+
+            let taxResults = annualSalaries.map(salary => {
+                let tax;
+                if (salary > 1000000) {
+                    tax = salary * 0.20;
+                } else if (salary > 500000) {
+                    tax = salary * 0.15;
+                } else if (salary > 300000) {
+                    tax = salary * 0.10;
+                } else {
+                    tax = 0;
+                }
+                return `Annual Salary: ${salary}, Tax: ${tax.toFixed(2)}`;
+            });
+
+            displayResults(taxResults);
+        }
+
+        function displayResults(results) {
+            let resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '';  // Clear previous results
+
+            results.forEach(result => {
+                let resultElement = document.createElement('p');
+                resultElement.textContent = result;
+                resultDiv.appendChild(resultElement);
+            });
+        }
+    </script>
+</body>
+</html>
+
+
