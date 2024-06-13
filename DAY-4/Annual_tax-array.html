@@ -17,11 +17,11 @@
 
             let taxResults = annualSalaries.map(salary => {
                 let tax;
-                if (salary > 1000000) {
+                if (salary * 12 > 1000000) {
                     tax = salary * 0.30;
-                } else if (salary > 500000) {
+                } else if (salary * 12 > 500000) {
                     tax = salary * 0.15;
-                } else if (salary > 300000) {
+                } else if (salary * 12 > 300000) {
                     tax = salary * 0.10;
                 } else {
                     tax = 0;
